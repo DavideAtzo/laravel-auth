@@ -18,11 +18,11 @@ class ProjectSeeder extends Seeder
     public function run(Faker $faker)
     {
         for ($i = 0; $i < 10; $i++){
-            $post = new Project();
-            $post->project_title = $faker->word;
-            $post->description = $faker->text(100);
-            $post->slug = Str::slug($post->project_title, '-');
-            $post->save();
+            $project = new Project();
+            $project->project_title = $faker->word;
+            $project->description = $faker->text(100);
+            $project->slug = Str::slug($project->project_title, '-');
+            $project->save();
         }
     }
 }
