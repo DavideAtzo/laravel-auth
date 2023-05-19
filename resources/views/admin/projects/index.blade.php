@@ -15,6 +15,7 @@
                         <tr>
                             <td>{{ $project->id }}</td>
                             <td>{{ $project->project_title }}</td>
+                            <td>{{ $project->creation_date }}</td>
                         </tr>
                     @endforeach
                 </tbody>
