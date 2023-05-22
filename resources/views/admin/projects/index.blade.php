@@ -3,6 +3,14 @@
 @section('content')
     <div class="container">
         <div class="row">
+            <div class="d-flex justify-content-between align-items-center">
+                <h1 class="text-secondary my-3">
+                    Project list
+                </h1>
+                <a href="{{ route('admin.projects.create') }}" class="btn btn-primary">Create a project</a>
+            </div>
+        </div>
+        <div class="row">
             <table class="table table-hover my-3">
                 <thead>
                     <tr>
