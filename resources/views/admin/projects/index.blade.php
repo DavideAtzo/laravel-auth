@@ -29,6 +29,7 @@
                             <td>
                                 <ul class="list-unstyled">
                                     <li><a href="{{ route('admin.projects.show', $project) }}" class="btn btn-sm btn-primary">Details</a></li>
+                                    <li><a href="{{ route('admin.projects.edit', $project) }}" class="btn btn-sm btn-warning">Edit</a></li>
                                 </ul>
                             </td>
                         </tr>
