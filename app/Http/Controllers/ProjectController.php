@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Project;
 use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class ProjectController extends Controller
 {
@@ -37,7 +39,14 @@ class ProjectController extends Controller
      */
     public function store(StoreProjectRequest $request)
     {
-        //
+        $data = $request->validated();
+        $new_project = new Project();
+        $new_project->project_title = $data['project_title'];
+        $new_project->description = $data['description'];
+        $new_project->slug =  Str::slug($new_project->project_title, '-');
+        $new_project->save();
+
+        return redirect()->route('admin.projects.index');
     }
 
     /**
