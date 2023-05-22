@@ -17,7 +17,7 @@
                         <th>#</th>
                         <th>Project Title</th>
                         <th>Creation date</th>
-                        <th>Comands</th>
+                        <th class="d-flex justify-content-end">Comands</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -27,7 +27,7 @@
                             <td>{{ $project->project_title }}</td>
                             <td>{{ $project->creation_date }}</td>
                             <td>
-                                <ul class="list-unstyled">
+                                <ul class="list-unstyled d-flex justify-content-end gap-2">
                                     <li><a href="{{ route('admin.projects.show', $project) }}"
                                             class="btn btn-sm btn-primary">Details</a></li>
                                     <li><a href="{{ route('admin.projects.edit', $project) }}"
