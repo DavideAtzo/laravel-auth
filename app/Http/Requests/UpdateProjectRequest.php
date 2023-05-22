@@ -32,6 +32,7 @@ class UpdateProjectRequest extends FormRequest
             ],
             'description' => 'nullable',
             'creation_date' => 'nullable|date',
+            'image' => 'nullable|image'
         ];
     }
 }

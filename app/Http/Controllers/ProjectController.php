@@ -42,6 +42,9 @@ class ProjectController extends Controller
         $data = $request->validated();
         $new_project = new Project();
         $new_project->project_title = $data['project_title'];
+        if (isset($data['image'])) {
+            $new_project->image = Storage::put('uploads', $data['image']);
+        }
         $new_project->description = $data['description'];
         $new_project->slug =  Str::slug($new_project->project_title, '-');
         $new_project->save();
@@ -82,6 +85,9 @@ class ProjectController extends Controller
     {
         $data = $request->validated();
         $data = $request->all();
+        if (isset($data['image'])) {
+            $project->image = Storage::put('uploads', $data['image']);
+        }
         $project->update($data);
         return to_route('admin.projects.index', compact('project'));
     }
@@ -94,6 +100,9 @@ class ProjectController extends Controller
      */
     public function destroy(Project $project)
     {
+        if($project->image){
+            Storage::delete($project->image);
+        }
         $project->delete();
         return to_route('admin.projects.index');
     }

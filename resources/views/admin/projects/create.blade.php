@@ -22,6 +22,10 @@
                             value="{{ old('project_title') }}">
                     </div>
                     <div class="mb-3">
+                        <label for="image" class="form-label">Image</label>
+                        <input class="form-control" type="file" id="image" name="image">
+                    </div>
+                    <div class="mb-3">
                         <label for="description" class="form-label">Description</label>
                         <textarea class="form-control" id="description" name="description">{{ old('description') }}</textarea>
                     </div>
