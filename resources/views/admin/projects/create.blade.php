@@ -1,6 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
     <div class="container">
         <div class="d-flex justify-content-between align-items-center">
             <div class="row">
@@ -18,7 +27,8 @@
                     </div>
                     <div class="mb-3">
                         <label for="creation_date" class="form-label">Creation date</label>
-                        <input type="date" class="form-control" id="creation_date" name="creation_date">{{ old('creation_date') }}</textarea>
+                        <input type="date" class="form-control" id="creation_date"
+                            name="creation_date">{{ old('creation_date') }}</textarea>
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>

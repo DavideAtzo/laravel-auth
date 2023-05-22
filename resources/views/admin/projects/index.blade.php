@@ -28,13 +28,15 @@
                             <td>{{ $project->creation_date }}</td>
                             <td>
                                 <ul class="list-unstyled">
-                                    <li><a href="{{ route('admin.projects.show', $project) }}" class="btn btn-sm btn-primary">Details</a></li>
-                                    <li><a href="{{ route('admin.projects.edit', $project) }}" class="btn btn-sm btn-warning">Edit</a></li>
-                                    <form action="{{ route('admin.projects.destroy', $project)}}" method="POST">
+                                    <li><a href="{{ route('admin.projects.show', $project) }}"
+                                            class="btn btn-sm btn-primary">Details</a></li>
+                                    <li><a href="{{ route('admin.projects.edit', $project) }}"
+                                            class="btn btn-sm btn-warning">Edit</a></li>
+                                    <form action="{{ route('admin.projects.destroy', $project) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
                                         <button class="btn btn-danger">Delete</button>
-                                      </form>
+                                    </form>
                                 </ul>
                             </td>
                         </tr>
